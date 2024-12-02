@@ -30,36 +30,43 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             pictureBox1 = new PictureBox();
-            button1 = new Button();
+            buttonDone = new Button();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            label1 = new Label();
+            textBox3 = new TextBox();
+            groupBox1 = new GroupBox();
+            buttonHelp = new Button();
+            groupBox2 = new GroupBox();
+            textBox4 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(512, 40);
+            pictureBox1.Location = new Point(485, 26);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(276, 48);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // button1
+            // buttonDone
             // 
-            button1.Location = new Point(632, 380);
-            button1.Name = "button1";
-            button1.Size = new Size(136, 49);
-            button1.TabIndex = 1;
-            button1.Text = "Результат";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonDone.Location = new Point(632, 380);
+            buttonDone.Name = "buttonDone";
+            buttonDone.Size = new Size(136, 49);
+            buttonDone.TabIndex = 1;
+            buttonDone.Text = "Результат";
+            buttonDone.UseVisualStyleBackColor = true;
+            buttonDone.Click += button1_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(27, 30);
+            textBox1.BackColor = SystemColors.Control;
+            textBox1.Location = new Point(17, 26);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(442, 211);
@@ -68,36 +75,79 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(69, 380);
-            textBox2.Multiline = true;
+            textBox2.Location = new Point(82, 67);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 34);
+            textBox2.Size = new Size(140, 27);
             textBox2.TabIndex = 3;
             textBox2.TextChanged += textBox2_TextChanged;
             textBox2.KeyPress += TextBoxVar;
             // 
-            // label1
+            // textBox3
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(682, 325);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 4;
-            label1.Text = "label1";
+            textBox3.Location = new Point(272, 380);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(141, 27);
+            textBox3.TabIndex = 4;
+            textBox3.TextChanged += textBox3_TextChanged;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(pictureBox1);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(761, 278);
+            groupBox1.TabIndex = 5;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Условие";
+            // 
+            // buttonHelp
+            // 
+            buttonHelp.Location = new Point(483, 380);
+            buttonHelp.Name = "buttonHelp";
+            buttonHelp.Size = new Size(127, 47);
+            buttonHelp.TabIndex = 6;
+            buttonHelp.Text = "информация";
+            buttonHelp.UseVisualStyleBackColor = true;
+            buttonHelp.Click += buttonHelp_Click;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(textBox4);
+            groupBox2.Controls.Add(textBox2);
+            groupBox2.Location = new Point(12, 313);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(250, 125);
+            groupBox2.TabIndex = 7;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Ввод данных";
+            // 
+            // textBox4
+            // 
+            textBox4.BackColor = SystemColors.Control;
+            textBox4.Location = new Point(65, 34);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(125, 27);
+            textBox4.TabIndex = 8;
+            textBox4.Text = "Переменная Х";
             // 
             // Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
-            Controls.Add(pictureBox1);
+            Controls.Add(buttonHelp);
+            Controls.Add(textBox3);
+            Controls.Add(buttonDone);
+            Controls.Add(groupBox1);
+            Controls.Add(groupBox2);
             Name = "Form";
-            Text = "Form1";
+            Text = "Голубев Д.С";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -105,9 +155,13 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Button button1;
+        private Button buttonDone;
         private TextBox textBox1;
         private TextBox textBox2;
-        private Label label1;
+        private TextBox textBox3;
+        private GroupBox groupBox1;
+        private Button buttonHelp;
+        private GroupBox groupBox2;
+        private TextBox textBox4;
     }
 }
