@@ -1,194 +1,148 @@
-﻿namespace Tyuiu.GolubevDS.Sprint6.Task1.V1;
-
-using System;
-using Tyuiu.GolubevDS.Sprint6.Task1.V1.Lib;
-
-partial class FormMain
+﻿namespace Tyuiu.GolubevDS.Sprint6.Task1.V1
 {
-    /// <summary>
-    ///  Required designer variable.
-    /// </summary>
-    private System.ComponentModel.IContainer components = null;
-
-    /// <summary>
-    ///  Clean up any resources being used.
-    /// </summary>
-    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-    protected override void Dispose(bool disposing)
+    partial class FormMain
     {
-        if (disposing && (components != null))
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
         {
-            components.Dispose();
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
         }
-        base.Dispose(disposing);
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            groupBox1 = new GroupBox();
+            textBoxStart = new TextBox();
+            textBoxStop = new TextBox();
+            groupBox2 = new GroupBox();
+            buttonRes = new Button();
+            buttonInfo = new Button();
+            groupBox3 = new GroupBox();
+            textBoxOut = new TextBox();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(507, 238);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Условие";
+            // 
+            // textBoxStart
+            // 
+            textBoxStart.Location = new Point(27, 399);
+            textBoxStart.Name = "textBoxStart";
+            textBoxStart.Size = new Size(125, 27);
+            textBoxStart.TabIndex = 1;
+            textBoxStart.KeyPress += textBoxStart_KeyPress;
+            // 
+            // textBoxStop
+            // 
+            textBoxStop.Location = new Point(167, 98);
+            textBoxStop.Name = "textBoxStop";
+            textBoxStop.Size = new Size(125, 27);
+            textBoxStop.TabIndex = 2;
+            textBoxStop.KeyPress += textBoxStop_KeyPress;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(textBoxStop);
+            groupBox2.Location = new Point(12, 301);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(311, 137);
+            groupBox2.TabIndex = 3;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Ввод данных";
+            // 
+            // buttonRes
+            // 
+            buttonRes.Location = new Point(379, 397);
+            buttonRes.Name = "buttonRes";
+            buttonRes.Size = new Size(123, 41);
+            buttonRes.TabIndex = 4;
+            buttonRes.Text = "Результат";
+            buttonRes.UseVisualStyleBackColor = true;
+            buttonRes.Click += buttonRes_Click;
+            // 
+            // buttonInfo
+            // 
+            buttonInfo.Location = new Point(392, 346);
+            buttonInfo.Name = "buttonInfo";
+            buttonInfo.Size = new Size(94, 29);
+            buttonInfo.TabIndex = 5;
+            buttonInfo.Text = "Инфо";
+            buttonInfo.UseVisualStyleBackColor = true;
+            buttonInfo.Click += buttonInfo_Click;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(textBoxOut);
+            groupBox3.Location = new Point(525, 20);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(263, 418);
+            groupBox3.TabIndex = 6;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Вывод данных";
+            // 
+            // textBoxOut
+            // 
+            textBoxOut.Location = new Point(19, 39);
+            textBoxOut.Multiline = true;
+            textBoxOut.Name = "textBoxOut";
+            textBoxOut.Size = new Size(222, 367);
+            textBoxOut.TabIndex = 0;
+            // 
+            // FormMain
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(groupBox3);
+            Controls.Add(buttonInfo);
+            Controls.Add(buttonRes);
+            Controls.Add(textBoxStart);
+            Controls.Add(groupBox1);
+            Controls.Add(groupBox2);
+            Name = "FormMain";
+            Text = "Голубев Д.С";
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private GroupBox groupBox1;
+        private TextBox textBoxStart;
+        private TextBox textBoxStop;
+        private GroupBox groupBox2;
+        private Button buttonRes;
+        private Button buttonInfo;
+        private GroupBox groupBox3;
+        private TextBox textBoxOut;
     }
-
-    private void InitializeComponent()
-    {
-        InitializeComponent(textBox_GDS);
-    }
-
-    #region Windows Form Designer generated code
-
-    /// <summary>
-    ///  Required method for Designer support - do not modify
-    ///  the contents of this method with the code editor.
-    /// </summary>
-    private void InitializeComponent(TextBox textBox_GDS)
-    {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-        groupBox_GDS = new GroupBox();
-        textBox_GDS = new TextBox();
-        groupBox1_GDS = new GroupBox();
-        textBoxStart_GDS = new TextBox();
-        textBoxStop_GDS = new TextBox();
-        textBoxInfoStart = new TextBox();
-        textBoxInfoStop_GDS = new TextBox();
-        buttonRes = new Button();
-        buttonInfo = new Button();
-        groupBoxOut = new GroupBox();
-        
-        groupBox_GDS.SuspendLayout();
-        groupBox1_GDS.SuspendLayout();
-        groupBoxOut.SuspendLayout();
-        SuspendLayout();
-        // 
-        // groupBox_GDS
-        // 
-        groupBox_GDS.Controls.Add(textBox_GDS);
-        groupBox_GDS.Location = new Point(12, 12);
-        groupBox_GDS.Name = "groupBox_GDS";
-        groupBox_GDS.Size = new Size(488, 217);
-        groupBox_GDS.TabIndex = 0;
-        groupBox_GDS.TabStop = false;
-        groupBox_GDS.Text = "Условие";
-        // 
-        // textBox_GDS
-        // 
-        textBox_GDS.BackColor = SystemColors.Control;
-        textBox_GDS.Location = new Point(6, 26);
-        textBox_GDS.Multiline = true;
-        textBox_GDS.Name = "textBox_GDS";
-        textBox_GDS.Size = new Size(461, 185);
-        textBox_GDS.TabIndex = 1;
-        textBox_GDS.Text = resources.GetString("textBox_GDS.Text");
-        textBox_GDS.TextChanged += this.textBox1_TextChanged;
-        // 
-        // groupBox1_GDS
-        // 
-        groupBox1_GDS.Controls.Add(textBoxInfoStop_GDS);
-        groupBox1_GDS.Controls.Add(textBoxInfoStart);
-        groupBox1_GDS.Controls.Add(textBoxStop_GDS);
-        groupBox1_GDS.Controls.Add(textBoxStart_GDS);
-        groupBox1_GDS.Location = new Point(18, 295);
-        groupBox1_GDS.Name = "groupBox1_GDS";
-        groupBox1_GDS.Size = new Size(325, 143);
-        groupBox1_GDS.TabIndex = 1;
-        groupBox1_GDS.TabStop = false;
-        groupBox1_GDS.Text = "Ввод данных";
-        // 
-        // textBoxStart_GDS
-        // 
-        textBoxStart_GDS.Location = new Point(20, 91);
-        textBoxStart_GDS.Name = "textBoxStart_GDS";
-        textBoxStart_GDS.Size = new Size(125, 27);
-        textBoxStart_GDS.TabIndex = 2;
-        textBoxStart_GDS.KeyPress += this.textBoxStart_GDS_KeyPress;
-        // 
-        // textBoxStop_GDS
-        // 
-        textBoxStop_GDS.Location = new Point(184, 91);
-        textBoxStop_GDS.Name = "textBoxStop_GDS";
-        textBoxStop_GDS.Size = new Size(125, 27);
-        textBoxStop_GDS.TabIndex = 3;
-        textBoxStop_GDS.KeyPress += this.textBoxStop_GDS_KeyPress;
-        // 
-        // textBoxInfoStart
-        // 
-        textBoxInfoStart.BackColor = SystemColors.Control;
-        textBoxInfoStart.Location = new Point(20, 58);
-        textBoxInfoStart.Name = "textBoxInfoStart";
-        textBoxInfoStart.Size = new Size(125, 27);
-        textBoxInfoStart.TabIndex = 4;
-        textBoxInfoStart.Text = "Начало шага";
-        // 
-        // textBoxInfoStop_GDS
-        // 
-        textBoxInfoStop_GDS.BackColor = SystemColors.Control;
-        textBoxInfoStop_GDS.Location = new Point(184, 58);
-        textBoxInfoStop_GDS.Name = "textBoxInfoStop_GDS";
-        textBoxInfoStop_GDS.Size = new Size(125, 27);
-        textBoxInfoStop_GDS.TabIndex = 5;
-        textBoxInfoStop_GDS.Text = "Конец шага";
-        // 
-        // buttonRes
-        // 
-        buttonRes.Location = new Point(375, 373);
-        buttonRes.Name = "buttonRes";
-        buttonRes.Size = new Size(125, 65);
-        buttonRes.TabIndex = 2;
-        buttonRes.Text = "Решение";
-        buttonRes.UseVisualStyleBackColor = true;
-        buttonRes.Click += this.buttonRes_Click;
-        // 
-        // buttonInfo
-        // 
-        buttonInfo.Location = new Point(386, 320);
-        buttonInfo.Name = "buttonInfo";
-        buttonInfo.Size = new Size(104, 47);
-        buttonInfo.TabIndex = 3;
-        buttonInfo.Text = "Справка";
-        buttonInfo.UseVisualStyleBackColor = true;
-        // 
-        // groupBoxOut
-        // 
-     
-        groupBoxOut.Location = new Point(523, 12);
-        groupBoxOut.Name = "groupBoxOut";
-        groupBoxOut.Size = new Size(265, 426);
-        groupBoxOut.TabIndex = 4;
-        groupBoxOut.TabStop = false;
-        groupBoxOut.Text = "Вывод данных";
-        // 
-        // textBoxEndRes
-        // 
-    
-        // 
-        // FormMain
-        // 
-        AutoScaleDimensions = new SizeF(8F, 20F);
-        AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(800, 450);
-        Controls.Add(groupBoxOut);
-        Controls.Add(buttonInfo);
-        Controls.Add(buttonRes);
-        Controls.Add(groupBox1_GDS);
-        Controls.Add(groupBox_GDS);
-        Name = "FormMain";
-        Text = "Form1";
-        Load += FormMain_Load;
-        groupBox_GDS.ResumeLayout(false);
-        groupBox_GDS.PerformLayout();
-        groupBox1_GDS.ResumeLayout(false);
-        groupBox1_GDS.PerformLayout();
-        groupBoxOut.ResumeLayout(false);
-        groupBoxOut.PerformLayout();
-        ResumeLayout(false);
-    }
-
-   
-
-    #endregion
-
-    private GroupBox groupBox_GDS;
-    private TextBox textBox_GDS;
-    private GroupBox groupBox1_GDS;
-    private TextBox textBoxInfoStop_GDS;
-    private TextBox textBoxInfoStart;
-    private TextBox textBoxStop_GDS;
-    private TextBox textBoxStart_GDS;
-    private Button buttonRes;
-    private Button buttonInfo;
-    private GroupBox groupBoxOut;
-    
 }
