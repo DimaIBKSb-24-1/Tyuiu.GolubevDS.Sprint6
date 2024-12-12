@@ -5,41 +5,45 @@ public class DataService : ISprint6Task7V10
 {
     public int[,] GetMatrix(string path)
     {
-        string fileData = File.ReadAllText(path);
-
-        // Нормализация окончания строк  
-        string[] lines = fileData.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-
-        int rows = lines.Length;
-        int columns = lines[0].Split(';').Length; // Предполагается, что все строки имеют одинаковое количество столбцов  
-        int[,] matrix = new int[rows, columns];
-
-        for (int i = 0; i < rows; i++)
+        try
         {
-            string[] values = lines[i].Split(';');
+            string fileData = File.ReadAllText(path);
+            string[] lines = fileData.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
-            for (int j = 0; j < columns; j++)
+            int rows = lines.Length;
+            int columns = lines[0].Split(';').Length;
+            int[,] matrix = new int[rows, columns];
+
+            for (int i = 0; i < rows; i++)
             {
-                // Попробуйте парсить и обработать исключения в случае нецелочисленных значений  
-                if (int.TryParse(values[j], out int value))
+                string[] values = lines[i].Split(';');
+                for (int j = 0; j < columns; j++)
                 {
-                    if (value >= 5 && value <= 10)
+                    if (int.TryParse(values[j], out int value))
                     {
-                        matrix[i, j] = 0; // Заменяем на 0 только если в пределах диапазона  
+                        // Логика замены значений  
+                        if (value >= 5 && value <= 10)
+                        {
+                            matrix[i, j] = value; // Оставляем значение  
+                        }
+                        else
+                        {
+                            matrix[i, j] = value; // Присваиваем оригинальное значение  
+                        }
                     }
                     else
                     {
-                        matrix[i, j] = value; // Присваиваем оригинальное значение, если вне диапазона  
+                        // Обработка ошибки парсинга  
+                        matrix[i, j] = 0; // Или какое-то другое значение по умолчанию  
                     }
                 }
-                else
-                {
-                    // Обработка ошибки парсинга (по желанию): установить значение по умолчанию, залогировать ошибку и т.д.  
-                    matrix[i, j] = 0; // или бросить исключение в зависимости от требований  
-                }
             }
+            return matrix;
         }
-
-        return matrix;
+        catch (Exception ex)
+        {
+            
+            return new int[0, 0]; // Возвращаем пустой массив в случае ошибки  
+        }
     }
 }
