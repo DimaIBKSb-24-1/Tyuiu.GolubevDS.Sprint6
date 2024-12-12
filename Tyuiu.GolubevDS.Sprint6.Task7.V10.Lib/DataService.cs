@@ -7,14 +7,12 @@ public class DataService : ISprint6Task7V10
     {
         string fileData = File.ReadAllText(path);
 
-        fileData = fileData.Replace('\n', '\r');
-        string[] lines = fileData.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
-
+        // Нормализация окончания строк  
+        string[] lines = fileData.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
         int rows = lines.Length;
-        int columns = lines[0].Split(';').Length;
+        int columns = lines[0].Split(';').Length; // Предполагается, что все строки имеют одинаковое количество столбцов  
         int[,] matrix = new int[rows, columns];
-
 
         for (int i = 0; i < rows; i++)
         {
@@ -22,15 +20,26 @@ public class DataService : ISprint6Task7V10
 
             for (int j = 0; j < columns; j++)
             {
-                matrix[i, j] = int.Parse(values[j]);
-
-                if (matrix[i, j] >= 5 && matrix[i, j] <= 10)
+                // Попробуйте парсить и обработать исключения в случае нецелочисленных значений  
+                if (int.TryParse(values[j], out int value))
                 {
-                    matrix[i, j] = 0;
+                    if (value >= 5 && value <= 10)
+                    {
+                        matrix[i, j] = 0; // Заменяем на 0 только если в пределах диапазона  
+                    }
+                    else
+                    {
+                        matrix[i, j] = value; // Присваиваем оригинальное значение, если вне диапазона  
+                    }
                 }
-
+                else
+                {
+                    // Обработка ошибки парсинга (по желанию): установить значение по умолчанию, залогировать ошибку и т.д.  
+                    matrix[i, j] = 0; // или бросить исключение в зависимости от требований  
+                }
             }
         }
+
         return matrix;
     }
 }
