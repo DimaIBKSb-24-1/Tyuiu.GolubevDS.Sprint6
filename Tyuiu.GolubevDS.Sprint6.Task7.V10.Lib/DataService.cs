@@ -5,45 +5,32 @@ public class DataService : ISprint6Task7V10
 {
     public int[,] GetMatrix(string path)
     {
-        try
+        string fileData = File.ReadAllText(path);
+
+        fileData = fileData.Replace('\n', '\r');
+        string[] lines = fileData.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
+
+        int rows = lines.Length;
+        int columns = lines[0].Split(';').Length;
+        int[,] matrix = new int[rows, columns];
+
+
+        for (int i = 0; i < rows; i++)
         {
-            string fileData = File.ReadAllText(path);
-            string[] lines = fileData.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] values = lines[i].Split(';');
 
-            int rows = lines.Length;
-            int columns = lines[0].Split(';').Length;
-            int[,] matrix = new int[rows, columns];
-
-            for (int i = 0; i < rows; i++)
+            for (int j = 0; j < columns; j++)
             {
-                string[] values = lines[i].Split(';');
-                for (int j = 0; j < columns; j++)
+                matrix[i, j] = int.Parse(values[j]);
+
+                if (matrix[4, j] >= 5 && matrix[4, j] < 10)
                 {
-                    if (int.TryParse(values[j], out int value))
-                    {
-                        // Логика замены значений  
-                        if (value >= 5 && value <= 10)
-                        {
-                            matrix[i, j] = value; // Оставляем значение  
-                        }
-                        else
-                        {
-                            matrix[i, j] = value; // Присваиваем оригинальное значение  
-                        }
-                    }
-                    else
-                    {
-                        // Обработка ошибки парсинга  
-                        matrix[i, j] = 0; // Или какое-то другое значение по умолчанию  
-                    }
+                    matrix[4, j] = 0;
                 }
+
             }
-            return matrix;
         }
-        catch (Exception ex)
-        {
-            
-            return new int[0, 0]; // Возвращаем пустой массив в случае ошибки  
-        }
+        return matrix;
     }
 }
